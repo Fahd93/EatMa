@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">EatMa</string>
+    <string name="splash_description">TROUVEZ VOTRE PROCHAIN REPAS</string>
+    <string name="copyrights">© 2021 eat.ma</string>
+</resources>

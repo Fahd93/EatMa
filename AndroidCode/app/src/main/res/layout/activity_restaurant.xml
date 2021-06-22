@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.RestaurantActivity">
+
+    <ImageView
+        android:id="@+id/iv_blur_main_picture"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_200sdp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/main_bg"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:src="@drawable/ic_arrow_back"
+        android:layout_marginStart="@dimen/_16sdp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_restaurant_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_restaurant_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:fontFamily="@font/opensans_bold"
+        android:letterSpacing="-0.1"
+        android:text="Las Terrazas de Andalucia"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16ssp"
+        app:layout_constraintBottom_toTopOf="@+id/rb_restaurant_rate"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RatingBar
+        android:id="@+id/rb_restaurant_rate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:rating="4.4"
+        style="?android:attr/ratingBarStyleIndicator"
+        android:progressTint="#ffc107"
+        android:progressBackgroundTint="#9FA1A6"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_restaurant_review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/opensans_regular"
+        android:text="4.4"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/rb_restaurant_rate"
+        app:layout_constraintStart_toEndOf="@+id/rb_restaurant_rate"
+        app:layout_constraintTop_toTopOf="@+id/rb_restaurant_rate" />
+
+    <TextView
+        android:id="@+id/tv_restaurant_review_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha=".5"
+        android:fontFamily="@font/opensans_regular"
+        android:text="(313)"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16ssp"
+        android:layout_marginStart="@dimen/_4sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/rb_restaurant_rate"
+        app:layout_constraintStart_toEndOf="@+id/tv_restaurant_review"
+        app:layout_constraintTop_toTopOf="@+id/rb_restaurant_rate" />
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:cardCornerRadius="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent=".76">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_16sdp">
+
+            <TextView
+                android:id="@+id/tv_information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_bold"
+                android:text="Informations"
+                android:textAllCaps="true"
+                android:textColor="@color/tint_icons"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_restaurant_tags"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_bold"
+                android:text="Café, Petit-déjeuner, Sushis, Pizza, Burger, Italien"
+                android:textColor="@color/red"
+                android:textSize="@dimen/_12ssp"
+                android:letterSpacing="-0.07"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_4sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_information" />
+
+            <TextView
+                android:id="@+id/tv_restaurant_services"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_bold"
+                android:text="Livraison, Sur place, A emporter"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10ssp"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_restaurant_tags" />
+
+            <TextView
+                android:id="@+id/tv_restaurant_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_regular"
+                android:text="Avenue du président kennedy, Hivernage\n(à côté d’hôtel EL Andalous)"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10ssp"
+                android:alpha=".5"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_restaurant_services" />
+
+            <TextView
+                android:id="@+id/tv_restaurant_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_regular"
+                android:text="Marrakech"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10ssp"
+                android:alpha=".5"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_restaurant_location" />
+
+
+            <ImageView
+                android:id="@+id/iv_phone"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@drawable/menu_button_bg"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_phone"
+                android:layout_marginStart="@dimen/_4sdp"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_restaurant_city"
+                app:layout_constraintWidth_percent=".1"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_restaurant_phone_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_bold"
+                android:text="0524448226"
+                android:textColor="@color/green"
+                android:textSize="@dimen/_16ssp"
+                android:layout_marginStart="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_phone"
+                app:layout_constraintStart_toEndOf="@+id/iv_phone"
+                app:layout_constraintTop_toTopOf="@+id/iv_phone"
+                />
+
+            <ImageView
+                android:id="@+id/iv_menu"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:src="@drawable/ic_restaurant"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_phone"
+                app:layout_constraintWidth_percent=".1"
+                app:tint="@color/tint_icons"/>
+
+            <TextView
+                android:id="@+id/tv_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/opensans_bold"
+                android:text="Menu"
+                android:textAllCaps="true"
+                android:textColor="@color/tint_icons"
+                android:textSize="@dimen/_16ssp"
+                android:layout_marginStart="@dimen/_4sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_menu"
+                app:layout_constraintStart_toEndOf="@id/iv_menu"
+                app:layout_constraintTop_toBottomOf="@id/iv_phone" />
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_menu"
+                app:layout_constraintWidth_percent=".8">
+
+                <ImageView
+                    android:id="@+id/iv_menu_pictures"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/main_bg"/>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintWidth_percent=".15"
+        android:background="@drawable/bookmark_bg"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="@dimen/_8sdp"
+        android:src="@drawable/ic_bookmark"
+        app:tint="@color/white"
+        android:padding="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        app:layout_constraintTop_toTopOf="@+id/cardView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
